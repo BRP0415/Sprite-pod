@@ -1,0 +1,17 @@
+name = "sprite-pod"
+type = "javascript"
+account_id = ""
+workers_dev = true
+route = ""
+zone_id = ""
+
+[env.production]
+name = "sprite-pod"
+routes = [
+  { pattern = "sprite-pod.gilbert-bot.com", zone_name = "gilbert-bot.com" }
+]
+
+[[rules]]
+type = "CompiledContentType"
+globs = ["**/*.wasm"]
+fallthrough = false

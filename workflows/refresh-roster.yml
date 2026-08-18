@@ -1,0 +1,116 @@
+name: Refresh sprite roster
+
+# Checks the live Sprite line-up several times a day, commits anything new
+# (fresh Sprites, new variants, new finishes, new artwork) and republishes the
+# site. Around a season launch this is what makes the app show Season 4's
+# Sprites without you touching anything.
+
+on:
+  schedule:
+    # Every 3 hours. Season launches and patches land at unpredictable times,
+    # so a short interval matters more here than saving CI minutes.
+    - cron: "17 */3 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Report what would change without committing"
+        type: boolean
+        default: false
+      force:
+        description: "Apply a large roster drop that would normally be refused"
+        type: boolean
+        default: false
+      season_name:
+        description: "Season name to use if a rollover is detected (e.g. Voltage)"
+        type: string
+        default: ""
+      season_ends:
+        description: "Season end date if known (YYYY-MM-DD)"
+        type: string
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-roster
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.refresh.outputs.changed }}
+      rollover: ${{ steps.refresh.outputs.rollover }}
+      title: ${{ steps.refresh.outputs.title }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check for new sprites
+        id: refresh
+        run: |
+          ARGS=""
+          if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="$ARGS --dry-run"; fi
+          if [ "${{ inputs.force }}" = "true" ]; then ARGS="$ARGS --force"; fi
+          if [ -n "${{ inputs.season_name }}" ]; then ARGS="$ARGS --season-name '${{ inputs.season_name }}'"; fi
+          if [ -n "${{ inputs.season_ends }}" ]; then ARGS="$ARGS --ends '${{ inputs.season_ends }}'"; fi
+          eval "npx tsx script/refresh-roster.ts $ARGS"
+
+      - name: Make sure the app still builds
+        if: steps.refresh.outputs.changed == 'true' && inputs.dry_run != true
+        run: |
+          npx tsc --noEmit
+          npm run build:static
+
+      - name: Commit the update
+        if: steps.refresh.outputs.changed == 'true' && inputs.dry_run != true
+        run: |
+          git config user.name "sprite-pod-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add shared/spriteData.json client/public/roster.json client/public/sprites
+          if git diff --cached --quiet; then
+            echo "Nothing staged after all."
+            exit 0
+          fi
+          git commit -m "${{ steps.refresh.outputs.title }}: ${{ steps.refresh.outputs.sprites }} sprites, ${{ steps.refresh.outputs.variants }} variants (${{ steps.refresh.outputs.season }})"
+          git push
+
+      # GitHub switches off scheduled workflows after 60 days without repo
+      # activity. A quiet off-season could hit that and silently stop the
+      # updates, so leave a small weekly heartbeat behind.
+      - name: Weekly heartbeat
+        if: steps.refresh.outputs.changed != 'true' && github.event_name == 'schedule'
+        run: |
+          # 06:xx UTC Monday — must be one of the hours the cron above runs.
+          if [ "$(date -u +%u)" != "1" ] || [ "$(date -u +%H)" != "06" ]; then
+            echo "Not the weekly slot; nothing to do."
+            exit 0
+          fi
+          git config user.name "sprite-pod-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          mkdir -p .github
+          date -u +"Last roster check: %Y-%m-%dT%H:%M:%SZ" > .github/roster-heartbeat.txt
+          git add .github/roster-heartbeat.txt
+          git diff --cached --quiet || {
+            git commit -m "chore: roster heartbeat"
+            git push
+          }
+
+  # A push from the job above won't trigger the deploy workflow on its own
+  # (GITHUB_TOKEN pushes don't start workflows), so call it explicitly.
+  deploy:
+    needs: refresh
+    if: needs.refresh.outputs.changed == 'true' && inputs.dry_run != true
+    uses: ./.github/workflows/deploy-pages.yml
+    permissions:
+      contents: read
+      pages: write
+      id-token: write

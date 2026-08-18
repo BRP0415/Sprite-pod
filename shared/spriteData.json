@@ -1,0 +1,461 @@
+{
+  "season": {
+    "id": "c7s3",
+    "chapter": 7,
+    "season": 3,
+    "name": "Runners",
+    "endsOn": "2026-08-19",
+    "note": "Sprites collected in Chapter 7 Season 3 do not carry over into Season 4 — every player's collection resets when the new season launches.",
+    "dataVersion": "2026-08-18",
+    "sources": [
+      "https://spritechecklistfortnite.com/",
+      "https://fortnite.bte.ar/en",
+      "https://www.gamesradar.com/games/fortnite/fortnite-sprites/",
+      "https://www.techtimes.com/articles/322252/20260730/fortnite-adds-20-sprites-v4130-rarest-companion-yours-free-before-season-ends.htm",
+      "https://fortnite.gg/sprites"
+    ],
+    "patch": "41.30"
+  },
+  "finishes": [
+    {
+      "id": "normal",
+      "name": "Normal",
+      "bonus": "Base ability only, no extra variant bonus.",
+      "hex": "#9aa4b2"
+    },
+    {
+      "id": "gold",
+      "name": "Gold",
+      "bonus": "Bonus Sprite XP from eliminations — fastest route to Level 5.",
+      "hex": "#e8b64c"
+    },
+    {
+      "id": "gummy",
+      "name": "Gummy",
+      "bonus": "+20% Sprite Dust when you extract.",
+      "hex": "#ff5fa2"
+    },
+    {
+      "id": "galaxy",
+      "name": "Galaxy",
+      "bonus": "+30% ammo when looting the ground or containers.",
+      "hex": "#8b6bff"
+    },
+    {
+      "id": "gem",
+      "name": "Gem",
+      "bonus": "-30% fall damage.",
+      "hex": "#38d6c4"
+    },
+    {
+      "id": "holofoil",
+      "name": "Holofoil",
+      "bonus": "+5% squad chance to find rare Sprite variants in chests.",
+      "hex": "#5ec8ff"
+    },
+    {
+      "id": "cube",
+      "name": "Cube",
+      "bonus": "Grants Overdrive while you are inside the Storm.",
+      "hex": "#c74bff"
+    },
+    {
+      "id": "quack",
+      "name": "Quack",
+      "bonus": "Shares 50% of earned Sprite XP with your other Sprites.",
+      "hex": "#ffd83d"
+    }
+  ],
+  "rarities": [
+    {
+      "id": "Rare",
+      "hex": "#3aa0ff"
+    },
+    {
+      "id": "Epic",
+      "hex": "#a558f0"
+    },
+    {
+      "id": "Legendary",
+      "hex": "#ff9d2e"
+    },
+    {
+      "id": "Mythic",
+      "hex": "#ffd83d"
+    }
+  ],
+  "sprites": [
+    {
+      "id": "water",
+      "name": "Water Sprite",
+      "rarity": "Rare",
+      "dropRate": "12.83%",
+      "ability": "Replenishes squad shields while in water.",
+      "finishes": [
+        "normal",
+        "gold",
+        "gummy",
+        "galaxy",
+        "gem",
+        "holofoil",
+        "quack"
+      ]
+    },
+    {
+      "id": "earth",
+      "name": "Earth Sprite",
+      "rarity": "Rare",
+      "dropRate": "12.83%",
+      "ability": "Chance for extra rare chest items.",
+      "finishes": [
+        "normal",
+        "gold",
+        "gummy",
+        "galaxy",
+        "gem",
+        "cube",
+        "quack"
+      ]
+    },
+    {
+      "id": "fire",
+      "name": "Fire Sprite",
+      "rarity": "Rare",
+      "dropRate": "12.45%",
+      "ability": "Releases a fiery burst after enough damage.",
+      "finishes": [
+        "normal",
+        "gold",
+        "gummy",
+        "galaxy",
+        "holofoil",
+        "cube",
+        "quack"
+      ]
+    },
+    {
+      "id": "fishy",
+      "name": "Fishy Sprite",
+      "rarity": "Rare",
+      "dropRate": "13.79%",
+      "ability": "Faster swimming and a movement boost under fire.",
+      "finishes": [
+        "normal",
+        "gold",
+        "gummy",
+        "galaxy",
+        "cube"
+      ]
+    },
+    {
+      "id": "air",
+      "name": "Air Sprite",
+      "rarity": "Rare",
+      "dropRate": "—",
+      "ability": "Faster sprinting, higher jumps, and no fall damage.",
+      "finishes": [
+        "normal",
+        "gold",
+        "gummy",
+        "galaxy",
+        "holofoil"
+      ]
+    },
+    {
+      "id": "duck",
+      "name": "Duck Sprite",
+      "rarity": "Epic",
+      "dropRate": "5.74%",
+      "ability": "Emoting and Jamming replenish shields.",
+      "finishes": [
+        "normal",
+        "gold",
+        "gummy",
+        "galaxy",
+        "gem"
+      ]
+    },
+    {
+      "id": "ghost",
+      "name": "Ghost Sprite",
+      "rarity": "Epic",
+      "dropRate": "5.74%",
+      "ability": "Brief cloak after reloading.",
+      "finishes": [
+        "normal",
+        "gold",
+        "gummy",
+        "galaxy",
+        "holofoil"
+      ]
+    },
+    {
+      "id": "demon",
+      "name": "Demon Sprite",
+      "rarity": "Epic",
+      "dropRate": "5.76%",
+      "ability": "Eliminations siphon health and shields.",
+      "finishes": [
+        "normal",
+        "gold",
+        "gummy",
+        "galaxy",
+        "gem"
+      ]
+    },
+    {
+      "id": "king",
+      "name": "King Sprite",
+      "rarity": "Epic",
+      "dropRate": "5.74%",
+      "ability": "Increases pickaxe damage.",
+      "finishes": [
+        "normal",
+        "gold",
+        "gummy",
+        "galaxy",
+        "holofoil"
+      ]
+    },
+    {
+      "id": "aura",
+      "name": "Aura Sprite",
+      "rarity": "Epic",
+      "dropRate": "5.74%",
+      "ability": "Grants a Shock Rock charge after enough damage.",
+      "finishes": [
+        "normal",
+        "gold",
+        "gummy",
+        "galaxy",
+        "gem"
+      ]
+    },
+    {
+      "id": "striker",
+      "name": "Striker Sprite",
+      "rarity": "Epic",
+      "dropRate": "5.74%",
+      "ability": "Movement actions trigger Overdrive.",
+      "finishes": [
+        "normal",
+        "gold",
+        "gummy",
+        "galaxy",
+        "holofoil"
+      ]
+    },
+    {
+      "id": "dream",
+      "name": "Dream Sprite",
+      "rarity": "Legendary",
+      "dropRate": "2.63%",
+      "ability": "Drops loot while leveling and Legendary loot at max level.",
+      "finishes": [
+        "normal",
+        "gold",
+        "gummy",
+        "galaxy",
+        "cube"
+      ]
+    },
+    {
+      "id": "punk",
+      "name": "Punk Sprite",
+      "rarity": "Legendary",
+      "dropRate": "1.98%",
+      "ability": "Can grant unlimited ammo temporarily.",
+      "finishes": [
+        "normal",
+        "gold",
+        "gummy",
+        "galaxy",
+        "cube"
+      ]
+    },
+    {
+      "id": "boss",
+      "name": "Boss Sprite",
+      "rarity": "Legendary",
+      "dropRate": "2.63%",
+      "ability": "Increases maximum Health and Shield.",
+      "finishes": [
+        "normal",
+        "gold",
+        "gummy",
+        "galaxy",
+        "cube"
+      ]
+    },
+    {
+      "id": "seven",
+      "name": "Seven Sprite",
+      "rarity": "Legendary",
+      "dropRate": "—",
+      "ability": "Shows enemy foot trails to your squad.",
+      "finishes": [
+        "normal",
+        "gold",
+        "gummy",
+        "galaxy",
+        "holofoil"
+      ]
+    },
+    {
+      "id": "llama",
+      "name": "Lootin' Llama Sprite",
+      "rarity": "Legendary",
+      "dropRate": "—",
+      "ability": "Ammo boxes can upgrade a weapon, 5–20% chance by level.",
+      "finishes": [
+        "normal",
+        "gold",
+        "gummy",
+        "galaxy",
+        "gem"
+      ]
+    },
+    {
+      "id": "peely",
+      "name": "Peeky Peely Sprite",
+      "rarity": "Legendary",
+      "dropRate": "—",
+      "ability": "Reveals rare variants and carriers at 40–80m, but reveals you too.",
+      "finishes": [
+        "normal",
+        "gold",
+        "gummy",
+        "galaxy",
+        "holofoil"
+      ]
+    },
+    {
+      "id": "batman",
+      "name": "Batman Sprite",
+      "rarity": "Mythic",
+      "dropRate": "—",
+      "ability": "Bat Cape redeploy and improved rare Sprite finds.",
+      "finishes": [
+        "normal",
+        "gold",
+        "gummy",
+        "galaxy",
+        "holofoil",
+        "cube"
+      ]
+    },
+    {
+      "id": "grim",
+      "name": "Grim Reaper Sprite",
+      "rarity": "Mythic",
+      "dropRate": "0.000098%",
+      "ability": "Marks players who damage you.",
+      "finishes": [
+        "normal",
+        "gold",
+        "gummy",
+        "galaxy",
+        "gem",
+        "holofoil",
+        "cube"
+      ]
+    },
+    {
+      "id": "zeropoint",
+      "name": "Zero Point Sprite",
+      "rarity": "Mythic",
+      "dropRate": "0.000098%",
+      "ability": "Creates a Shield Bubble Jr. when you heal.",
+      "finishes": [
+        "normal",
+        "gold",
+        "gummy",
+        "galaxy",
+        "gem",
+        "holofoil",
+        "cube",
+        "quack"
+      ]
+    },
+    {
+      "id": "burntpeanut",
+      "name": "Burnt Peanut Sprite",
+      "rarity": "Mythic",
+      "dropRate": "1.01%",
+      "ability": "Eliminations can drop extra or Mythic loot.",
+      "finishes": [
+        "normal"
+      ]
+    },
+    {
+      "id": "vinijr",
+      "name": "Vini Jr. Sprite",
+      "rarity": "Mythic",
+      "dropRate": "—",
+      "ability": "Destructive slidekick plus fire-rate and reload boosts.",
+      "finishes": [
+        "normal"
+      ]
+    },
+    {
+      "id": "pollo",
+      "name": "Pollo Sprite",
+      "rarity": "Mythic",
+      "dropRate": "—",
+      "ability": "Eliminations restore nearby squad shields over time.",
+      "finishes": [
+        "normal"
+      ]
+    },
+    {
+      "id": "johnwick",
+      "name": "John Wick Sprite",
+      "rarity": "Mythic",
+      "dropRate": "—",
+      "ability": "Reveals nearby enemies for 3–5 seconds after a knock or elimination.",
+      "finishes": [
+        "normal"
+      ]
+    },
+    {
+      "id": "ironmouse",
+      "name": "Ironmouse Sprite",
+      "rarity": "Mythic",
+      "dropRate": "—",
+      "ability": "Regenerates low Health and grants Cloak plus low gravity while healing.",
+      "finishes": [
+        "normal"
+      ]
+    }
+  ],
+  "masteryMilestones": [
+    {
+      "count": 5,
+      "reward": "Sprite Dust + XP"
+    },
+    {
+      "count": 10,
+      "reward": "Portable Extractor"
+    },
+    {
+      "count": 25,
+      "reward": "Sprite Pod Back Bling"
+    },
+    {
+      "count": 55,
+      "reward": "Quack Zero Point Sprite (season reward, before Aug 19)"
+    },
+    {
+      "count": 70,
+      "reward": "Final Sprite Mastery reward tier"
+    }
+  ],
+  "variantCount": 117,
+  "artManifestVersion": "2026-08-18",
+  "sources": [
+    "https://spritechecklistfortnite.com/",
+    "https://fortnite.bte.ar/en",
+    "https://www.gamesradar.com/games/fortnite/fortnite-sprites/",
+    "https://www.techtimes.com/articles/322252/20260730/fortnite-adds-20-sprites-v4130-rarest-companion-yours-free-before-season-ends.htm"
+  ]
+}
